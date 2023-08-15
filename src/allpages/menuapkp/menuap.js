@@ -3,9 +3,12 @@ import "../../App.css";
 import hamburguer from "../../imagens/hamburguer.png";
 import useAuth from "../../hooks/useAuth";
 import { useNavigate } from "react-router-dom";
+
+
 function MenuApp(){
     const {signout} = useAuth();
     const navigate = useNavigate();
+    const {setPreviewUrl} = useState();
     const [menuVisivel, setMenuVisivel]= useState(false);
     const hamburguerToogle = () =>{
         setMenuVisivel(!menuVisivel);
@@ -13,6 +16,20 @@ function MenuApp(){
     const [historicovisivel,Sethistoricovisivel]=useState(false);
     const historicotoogle= () =>{
         Sethistoricovisivel(!historicovisivel);
+    }
+    const handlePhotoUpload = (event) => {
+        //obtém o arquivo selecionado
+        const selectedFile = event.target.files[0];
+
+        const previewUrl = URL.createObjectURL(selectedFile);
+        //visualizador de foto
+        setPreviewUrl(previewUrl);
+        // Se você tiver um estado para armazenar a URL da pré-visualização
+    
+        // Ou você pode fazer upload da foto para um servidor:
+         // Implemente aqui a lógica de upload da foto
+
+        
     }
     return(
         <div className="menu ">
@@ -52,7 +69,8 @@ function MenuApp(){
                 {menuVisivel && (
                     <div className="menu-bar">
                         <button className="botaotogle" onClick={hamburguerToogle} ><i class="fi fi-br-cross"></i></button>
-                        <p>Entrar</p> <br/>
+                        <p><input type="file" onChange={handlePhotoUpload} /></p>
+                        <p>BemVindo</p> <br/>
                         <p>Contato</p> <br/>
                         <p>Como Funciona!</p> <br />
                         <p>Desenvolvedor</p> <br/>

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import useAuth from "../../hooks/useAuth";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+
 
 
 
@@ -10,11 +11,8 @@ const Formulario = () => {
   const [senha, setSenha] = useState("");
   const [error,setError] = useState("");
   const {signup} =useAuth();
+  const navigate = useNavigate();
 
-
-
-  
-  
 
   const enviofor = (event) => {
     event.preventDefault();
@@ -29,14 +27,16 @@ const Formulario = () => {
     if (res) {
       setError(res);
       return;
+    } else{
+      navigate("/login")
+
     }
 
-    alert("Usuário cadatrado com sucesso!");
 
   };
 
   return (
-    <div className="formulario">
+    <div className="Formulariopagecont">
       <h2>Entrar</h2>
       <form onSubmit={enviofor}>
         <label>
