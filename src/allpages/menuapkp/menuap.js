@@ -1,8 +1,11 @@
 import React, {useState} from "react";
 import "../../App.css";
 import hamburguer from "../../imagens/hamburguer.png";
-
+import useAuth from "../../hooks/useAuth";
+import { useNavigate } from "react-router-dom";
 function MenuApp(){
+    const {signout} = useAuth();
+    const navigate = useNavigate();
     const [menuVisivel, setMenuVisivel]= useState(false);
     const hamburguerToogle = () =>{
         setMenuVisivel(!menuVisivel);
@@ -53,7 +56,7 @@ function MenuApp(){
                         <p>Contato</p> <br/>
                         <p>Como Funciona!</p> <br />
                         <p>Desenvolvedor</p> <br/>
-                        <p> Blogs</p>
+                        <button style={{color:'white'}} onClick={() =>[signout(),navigate("/login")]}> Sair</button>
                     </div>
                 )}
                 

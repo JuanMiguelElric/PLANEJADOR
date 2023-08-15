@@ -1,11 +1,12 @@
 import React,{useState} from "react";
 import "../App.css";
-//import {useNavigate } from "react-router-dom";
+import {useNavigate } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
 import { Link } from "react-router-dom";
 
 const Login = () =>{
     const {signin}=useAuth();
+    const navigate = useNavigate ();
 
 
 
@@ -24,6 +25,9 @@ const Login = () =>{
         if(res){
             setError(res);
             return;
+        }
+        else{
+            navigate("/dashboard")
         }
 
     }

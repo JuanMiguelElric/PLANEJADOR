@@ -19,12 +19,7 @@ function Menu(){
                     </Link>
                 </li>
                 <li>
-                    <Link className="decoration" to="/blogs">
-                        Blogs
-
-                    </Link>
-                    
-
+                    Desenvolvedor
                 </li>
                 <button onClick={hamburguerToogle} ><img src={hamburguer} className="App-logo" alt="hamburguer"/></button>
                 {menuVisivel && (
@@ -44,11 +39,7 @@ function Menu(){
                         <p>
                             Desenvolvedor
                         </p> <br/>
-                        <p>
-                            <Link className="decoration" to="/blogs">
-                                Blogs
-                            </Link>
-                        </p>
+                       
                     </div>
                 )}
                 
