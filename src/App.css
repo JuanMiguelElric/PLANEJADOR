@@ -310,11 +310,20 @@ h4{
   }
   .body-page{
     width: 49vmax;
+    padding-right: 10%;
+
   }
   .imageinformation{
     width: 38vmax;
     margin-left: 20%;
     
+  }
+  .planejador{
+    width: 50vmax;
+    padding-right: 10px;
+  }
+  .card-tarefa{
+    width: 50vmax;
   }
 
 }
