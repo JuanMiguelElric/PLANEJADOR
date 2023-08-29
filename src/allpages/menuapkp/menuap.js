@@ -54,7 +54,7 @@ function MenuApp(){
                         <p><input type="file" onChange={handlePhotoUpload} /></p>
                         <p>BemVindo</p> <br/>
                         <p>Convidar Amigo</p> <br/>
-                        <p>Como Funciona!</p> <br />
+                        <p>Instagram</p> <br />
                         <p>Desenvolvedor</p> <br/>
                         <button style={{color:'white'}} onClick={() =>[signout(),navigate("/login")]}> Sair</button>
                     </div>

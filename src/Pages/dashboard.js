@@ -3,6 +3,7 @@ import "../App.css";
 import MenuApp from "../allpages/menuapkp/menuap";
 
 function Dashboard() {
+    //declarando variaveis para a criação da lista de tarefas
     const [tarefa, setTarefa] = useState('');
     const [horario, setHorario] = useState('');
     const [diaseman, setDiasemana] = useState('');
@@ -57,9 +58,11 @@ function Dashboard() {
         setHorario('');
         setDiasemana('');
     };
+    // conclusão de tarefa
     const concluirTarefa = (index) => {
         const tarefaConcluida = listaTarefas[index];
         setTarefasConcluidas([...tarefasConcluidas, tarefaConcluida]);
+        //filtra as tares se for !== index remove as
         const novasTarefas = listaTarefas.filter((_, i) => i !== index);
         setListaTarefas(novasTarefas);
     };
